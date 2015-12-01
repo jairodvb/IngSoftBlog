@@ -7,6 +7,7 @@ package co.utb.softeng.blog.DAO;
 
 import co.utb.softeng.blog.Entidades.Post;
 import java.util.List;
+import javax.persistence.*;
 
 /**
  *
@@ -18,7 +19,8 @@ public interface PostBlogDAO {
     public Post getbyId(Long Id);
     public Post getbytitulo(String titulo);
     public Post getbykeywords(String keywords);
-    //public Post getbycuerpo(String cuerpo);
+    @Lob
+    public Post getbycuerpo(String cuerpo);
     public void publicarOeditarpost(Post post);
     public void eliminarpost(Long Id);
 

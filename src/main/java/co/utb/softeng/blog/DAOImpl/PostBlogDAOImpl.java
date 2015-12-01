@@ -20,6 +20,7 @@ import org.springframework.stereotype.Repository;
 import co.utb.softeng.blog.DAO.PostBlogDAO;
 import co.utb.softeng.blog.Entidades.Post;
 import java.util.List;
+import javax.persistence.*;
 
 /**
  *
@@ -65,10 +66,6 @@ public class PostBlogDAOImpl implements PostBlogDAO {
                 .uniqueResult();
     }
 
-/*    @Override
-    public Post getbycuerpo(String cuerpo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
 
     @Override
     public void publicarOeditarpost(Post post) {
@@ -81,5 +78,13 @@ public class PostBlogDAOImpl implements PostBlogDAO {
         post.setId(Id);
         getSession().delete(post);
     }
+
     
+    @Override
+    public Post getbycuerpo(String cuerpo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+
+ 
 }
